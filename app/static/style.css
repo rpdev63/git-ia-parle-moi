@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --app-blue: #33CCCC;
+    --app-dark-blue: #33CCCC;
+}
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--app-blue);
+    font-family: "Montserrat";
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background: #FDFDFD;
+}
+
+header {
+    margin: auto;
+}
+
+.choices {
+    display: flex;
+    align-items: center;
+}
+
+.choices ul {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.choices ul li {
+    list-style: none;
+    padding: 20px 12px;
+    cursor: pointer;
+}
+
+.choices ul li img {
+    width: 50px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.choices ul li img:hover {
+    border-radius: 50%;
+    border: 2px solid var(--app-blue);
+}
+
+.choices ul li img.disabled {
+    opacity: 0.2;
+    cursor: default;
+}
+
+.selected {
+    transform: scale(1.3);
+    transition: transform 0.5s;
+    border: 3px solid var(--app-blue);
+    border-radius: 50%;
+}
+
+.range-bar {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-left: 10px;
+    font-size: 1.3em;
+}
+
+.slider {
+    cursor: pointer;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    text-align: center;
+}
+
+.main .controls ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.main .controls ul li {
+    padding-top: 20px;
+    list-style: none;
+}
+
+.main .controls ul li img {
+    width: 70%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.main .controls ul li img.active {
+    cursor: default;
+    opacity: 0.2;
+}
+
+
+.main .controls ul li img:hover {
+    border-radius: 50%;
+    transform: scale(1.1);
+    transition: all 0.3s;
+}
+
+.main .controls ul li img.active:hover {
+    border-radius: 50%;
+    box-shadow: none;
+}
+
+#micro {
+    width: 160px;
+}
+
+
+
+/* =================== Answer bloc =============== */
+.card {
+    display: none;
+    width: 600px;
+    background: #f1f1f1;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 50px;
+}
+
+.card h3 {
+    position: relative;
+    top: -10px;
+    /* margin-bottom: 10px; */
+}
+
+.card p {
+    color: black;
+    line-height: 1.4;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+
+#valentin {
+    width: 180px;
+    height: 180px;
+    /* pour ne pas écraser l'image */
+    object-fit: cover;
+    border-radius: 50%;
+    float: left;
+    /* le texte suit la forme de l'image / élément */
+    shape-outside: margin-box;
+    margin: 0 30px 5px 0;
+    border: 2px solid var(--app-blue);
+}
+
+#arrow {
+    width: 25px;
+    display: none;
+    cursor: pointer;
+    float: right;
+}
+
+#arrow:hover {
+    transform: scale(1.2);
+}
+
+
+footer {
+    padding: 22px;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 800;
+}
+
+
+/* =============== RESPONSIVE ================ */
+@media all and (max-width:570px) {
+    .choices ul li img {
+        width: 30px;
+    }
+
+    .choices {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
